@@ -7,12 +7,14 @@ include "main.h"
  */
 char *string_toupper(char *n)
 {
+
 int i;
 
-for (i = 0; n[i] != '\0'; i++)
+i = 0;
+while (*(s + i))
 {
-if (n[i] >= 'a' && n[i] <= 'z')
-n[i] = n[i] - 32;
+if (*(n + i) >= 'a' && *(n + i) <= 'z')
+*(n + i) -= 'a' - 'A';
+i++;
 }
 return (n);
-}
