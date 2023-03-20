@@ -2,8 +2,6 @@
 #define DOG_H
 
 /*
- * File: dog.h
- * Auth: Gedeon Obae Gekonge
  * Desc: Header file that defines a new type struct dog.
  */
 
