@@ -3,7 +3,6 @@
 
 /*
  * File: 0-object_like_macro.h
- * Auth: Gedeon Obae Gekonge
  * Desc: Header file that defines a macro named
  *       SIZE as an abbreviation for the token 1024.
  */
