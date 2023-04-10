@@ -42,7 +42,7 @@ exit(100);
  * Description:argument count incorrect - 97.
  *              file_from does not exist or  read - 98.
  *              file_to not created or written - 99.
- *              file_to or file_f not  closed - 100.
+ *              file_to or file_from not  closed - 100.
  */
 int main(int argc, char *argv[])
 {
@@ -58,7 +58,7 @@ exit(97);
 }
 buffer = create_buffer(argv[2]);
 from = open(argv[1], O_RDONLY);
-r = read(from, buffer, 1024);
+a = read(from, buffer, 1024);
 to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 do {
 if (from == -1 || a == -1)
@@ -68,7 +68,7 @@ dprintf(STDERR_FILENO,
 free(buffer);
 exit(98);
 }
-w = write(to, buffer, a);
+c = write(to, buffer, a);
 if (to == -1 || c == -1)
 {
 dprintf(STDERR_FILENO,
