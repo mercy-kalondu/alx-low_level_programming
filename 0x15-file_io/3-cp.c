@@ -46,7 +46,10 @@ exit(100);
  */
 int main(int argc, char *argv[])
 {
-int f, t, r, w;
+int f;
+int t;
+int r;
+int w;
 char *buffer;
 if (argc != 3)
 {
@@ -69,7 +72,7 @@ w = write(t, buffer, r);
 if (t == -1 || w == -1)
 {
 dprintf(STDERR_FILENO,
-"Error: Can't write t %s\n", argv[2]);
+"Error: Can't write to %s\n", argv[2]);
 free(buffer);
 exit(99);
 }
