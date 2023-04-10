@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * read_textfile- Reads a texxfile and prints to STDOUT
  * @filename: text file that will be read
