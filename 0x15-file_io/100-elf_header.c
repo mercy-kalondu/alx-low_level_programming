@@ -199,8 +199,8 @@ printf("<unknown: %x>\n", e_type);
 }
 }
 /**
- * print_entry - entry point 
- * @e_entry: address of the ELF entry point.
+ * print_entry - entry point
+ * @e_entry: address of the ELF entry point
  * @e_ident: points to an array with the ELF class.
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
