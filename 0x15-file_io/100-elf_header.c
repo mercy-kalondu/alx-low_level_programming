@@ -241,10 +241,9 @@ exit(98);
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 Elf64_Ehdr *header;
-int a;
-int b;
-a = open(argv[1], O_RDONLY);
-if (a == -1)
+int o, r;
+o = open(argv[1], O_RDONLY);
+if (o == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 exit(98);
@@ -252,15 +251,15 @@ exit(98);
 header = malloc(sizeof(Elf64_Ehdr));
 if (header == NULL)
 {
-close_elf(a);
+close_elf(o);
 dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 exit(98);
 }
-b = read(a, header, sizeof(Elf64_Ehdr));
-if (b == -1)
+r = read(o, header, sizeof(Elf64_Ehdr));
+if (r == -1)
 {
 free(header);
-close_elf(a);
+close_elf(o);
 dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 exit(98);
 }
@@ -275,6 +274,6 @@ print_abi(header->e_ident);
 print_type(header->e_type, header->e_ident);
 print_entry(header->e_entry, header->e_ident);
 free(header);
-close_elf(a);
+close_elf(o);
 return (0);
 }
